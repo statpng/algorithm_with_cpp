@@ -1,0 +1,16 @@
+https://cses.fi/problemset
+
+- Programming challenges  by Steven S. Skiena and Miguel A. Revilla (2003)
+
+- Competitive Programming 3 by Steven Halim and Felix Halim
+
+- Looking for a Challenge?
+
+- Introduction to Algorithms by Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, and Clifford Stein (CLRS)
+
+- Algorithm Design by Jon Kleinberg and Eva Tardos
+
+- The Algorithm Design Manual by Steven Skiyena
+
+
+
