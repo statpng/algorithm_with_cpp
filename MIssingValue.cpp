@@ -1,27 +1,107 @@
-#include <iostream>
 #include <fstream>
-#include <string>
+#include <iostream>
+#include <bits/stdc++.h>
+#include <valarray>
+
+using namespace std;
 
 int main(){
-	// freopen("input.txt", "r", stdin);
-	// freopen("output.txt", "w", stdout);
 
-	// std::ios_base::sync_with_stdio(false);
-	// std::ifstream cin;
-	// cin.open("input.txt");
-	// int n;
-	// cin >> n;
+	std::ifstream InputFile("input.txt");
 
 	int n;
-	std::string seq;
-	std::ifstream inputfile ("input.txt");
-	std::getline( inputfile, n);
-	std::getline( inputfile, seq);
+	InputFile >> n;
 
-	// int nn = n;
-	// std::printf("%d", 5*nn);
-	// std::printf("%s", seq);
+	int seq_full[100];
+	int count = 0;
+	while (InputFile.eof() == false){
+		count += 1;
+		InputFile >> seq_full[count];
+	}
 
+	int seq[count];
+	for( int h=1; h<+count; h++){
+		seq[h] = seq_full[h];
+	}
+
+    // int n; std::cin >> n;
+	// int seq[100];
+	// int count = 0;
+	// while (std::cin.eof() == false){
+	// 	count += 1;
+	// 	std::cin >> seq[count];
+	// 	// std::cout << seq[count] << "\n";
+	// }
+
+	std::sort(seq, seq+sizeof(seq)/sizeof(seq[0]) );
+
+	for( int i=1; i<=sizeof(seq)/sizeof(seq[0]); i++ ){
+		std::cout << seq[i] << "\n";
+	}
+
+	// for( i=1; i<=n; i++ ){
+	// 	int Include = 0;
+	// 	for( int j=1; j<=count; j++ ){
+	// 		if( i == seq[j] ){
+	// 			Include += 1;
+	// 			break;
+	// 		}
+	// 	}
+				
+	// 	if( Include == 0 ) std::cout << i << "\n";
+	// }
+
+	// for( int i=0; i<100; ++i ){
+	// 	InputFile >> seq[i];
+	// 	// std::cout << seq[i] << "\n";
+	// }
+
+	// std::cout << seq[1] << "\n";
+	
+	// InputFile.getline(n, 100);
+
+	// char InputString[100];
+	// InputFile.getline(InputString, 100);
+
+	// std::cout << n[0] << "\n";
+	// for( int i=0; i< n[0]; ++i ){
+	// 	printf("%d", i);
+	// }
+
+	// std::cout << n << "\n";
+	// std::cout << InputString << "\n";
+
+	//////////////////////////////////////////////////
+	// std::string str[100];
+
+	// for(int i=0; i<100; ++i){
+	// 	getline(cin, str[i]);
+	// }
+
+	// for(int j=0; j<100; ++j){
+	// 	std::cout << str[j] << "\n";
+	// }
+	//////////////////////////////////////////////////
+
+	//////////////////////////////////////////////////
+	// while(!InputFile.eof()){
+	// 	InputFile.getline(InputString, 256);
+	// 	std::cout << InputString << "\n";
+	// }
+	//////////////////////////////////////////////////
+
+
+	//////////////////////////////////////////////////
+	// char* result = strtok(InputString, "");
+	// printf("%s\n", result);
+	// std::cout << inputfile << "\n";
+	// std::getline( inputfile, n);
+	// std::getline( inputfile, seq);
+	//////////////////////////////////////////////////
+
+
+
+	
 	return 0;
 	
 }
