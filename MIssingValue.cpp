@@ -1,43 +1,71 @@
 #include <fstream>
 #include <iostream>
 #include <bits/stdc++.h>
-#include <valarray>
+#include <algorithm>
+#include <typeinfo>
 
 using namespace std;
 
 int main(){
 
-	std::ifstream InputFile("input.txt");
+	int seq_full[2*100000];
+	
+	// std::ifstream InputFile("test_input.txt");
+	// int n;
+	// InputFile >> n;
 
-	int n;
-	InputFile >> n;
-
-	int seq_full[100];
+	// int count = 0;
+	// while (InputFile.eof() == false){
+	// 	InputFile >> seq_full[count];
+	// 	count += 1;
+	// }
+	
+    int n; std::cin >> n;
 	int count = 0;
-	while (InputFile.eof() == false){
+	while (std::cin.eof() == false){
+		std::cin >> seq_full[count];
 		count += 1;
-		InputFile >> seq_full[count];
+		// std::cout << seq[count] << "\n";
 	}
 
-	int seq[count];
-	for( int h=1; h<+count; h++){
+	
+	int seq[n-1];
+	for( int h=0; h<n-1; h++){
 		seq[h] = seq_full[h];
 	}
 
-    // int n; std::cin >> n;
-	// int seq[100];
-	// int count = 0;
-	// while (std::cin.eof() == false){
-	// 	count += 1;
-	// 	std::cin >> seq[count];
-	// 	// std::cout << seq[count] << "\n";
+	std::sort(seq, seq+n-1 );
+
+
+	// for( int i=0; i<n-1; i++ ){
+	// 	std::cout << seq[i] << "\n";
 	// }
 
-	std::sort(seq, seq+sizeof(seq)/sizeof(seq[0]) );
+	for( int j=0; j<n; j++ ){
+		// std::cout << "j is " << j+1 << "\n";
+		// std::cout << "seq[j] is " << seq[j] << "\n";
 
-	for( int i=1; i<=sizeof(seq)/sizeof(seq[0]); i++ ){
-		std::cout << seq[i] << "\n";
+		// std::cout << "type of j : " << typeid(j).name() << "\n";
+		// std::cout << "type of seq[j] : " << typeid(seq[j]).name() << "\n";
+		// std::cout << "diff:" << std::abs(seq[j-1] - seq[j]) << "\n";
+
+		// if( std::abs( seq[j-1] - seq[j] ) > 1 ){
+		// 	std::cout << j << "\n";
+		// }
+
+		if( std::abs( j+1 - seq[j] ) > 0 ){
+			// std::cout << "j is " << j+1 << "\n";
+			// std::cout << "seq[j] is " << seq[j] << "\n";
+
+			std::cout << j+1 << "\n";
+			// std::cout << "seq[j]:" << seq[j] << "\n";
+			// std::cout << "seq[j+1]:" << seq[j] << "\n";
+			break;
+		}
+
+		// if( std::abs( seq[j-1] - seq[j] ) > 1 ) break;
 	}
+
 
 	// for( i=1; i<=n; i++ ){
 	// 	int Include = 0;
@@ -105,101 +133,3 @@ int main(){
 	return 0;
 	
 }
-
-
-// int main(){
-//     int a, b;
-//     std::string x;
-
-//     std::cin >> a >> b >> x;
-//     std::cout << a << " " << b << " " << x << "\n";
-
-//     return 0;
-// }
-
-
-
-
-
-// Using sync_with_stdio to improve computing time
-
-// #include <iostream>
-// int main(){
-//     int a, b;
-//     std::string x;
-
-//     std::ios::sync_with_stdio(0);
-//     // scanf, printf와 같은 C 표준 입출력 함수와 cout, cin같은 C++ 입출력 객체를 섞어 사용하는 경우 오답처리가 날 수 있습니다
-//     std::cin.tie(0);
-
-//     // std::cin >> a >> b >> x;
-//     // std::cout << a << " " << b << " " << x << "\n";
-
-//     std::scanf("%d %d", &a, &b);
-//     std::printf("%d %d\n", a, b);
-
-//     return 0;
-// }
-
-
-
-
-// Read a whole line with null spaces
-
-// #include <iostream>
-// #include <stdio.h>
-// int main(){
-    
-//     std::string x;
-//     // string s;
-//     // std::getline(cin, s);
-
-//     while(std::cin >> x){
-//         std::cout << x << std::endl;
-//     }
-
-//     return 0;
-// }
-
-
-
-
-// Save a sequence of 1:10 into output.txt
-
-// #include <stdio.h>
-
-// int main(){
-//     // freopen("output.txt", "r", stdin);
-// 	freopen("output.txt", "w", stdout);
-
-//     for(int i=0; i<10; ++i){
-//         printf("%d \n", i);
-//     }
-
-//     return 0;
-// }
-
-
-
-
-
-// Read a text file and print context of them
-
-// #include <stdio.h>
-
-// int main(){
-//     char ch[100];
-//     stdin = freopen("input.txt", "r", stdin);
-//     printf("File content is--\n");
-// 	printf("\n...............print the strings..............\n\n");
-// 	while(!feof(stdin)){
-// 		//takes the first 100 character in the character array 
-// 		fgets(ch,100,stdin);
-// 		//and print the strings
-// 		printf("%s",ch);
-// 	}
-	    
-//     return 0;
-// }
-
-
