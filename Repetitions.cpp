@@ -6,7 +6,7 @@ int main(){
 
     // char* InputString[10];
 
-    char InputString_full[1000000];
+    char InputString_full [1000000];
 
     // std::ifstream InputFile("input.txt");
     // std::getline(std::cin, InputString);
